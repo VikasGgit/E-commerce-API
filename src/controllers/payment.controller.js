@@ -7,7 +7,8 @@ const createPaymentLin= async (req, res) => {
 
     }
     catch(err){
-        return res.status(500).send(err.message)
+        console.log(err.message);
+        return res.status(500).send("payment link not found")
     }
 };
 
