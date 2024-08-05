@@ -3,12 +3,12 @@ import { createPaymentLink, updatePaymentInfo} from "../services/payment.service
 const createPaymentLin= async (req, res) => {
     try{
         const paymentLink = await createPaymentLink(req.params.id)
-        console.log(paymentLink);
+        console.log("paymentLink" ,paymentLink);
         return res.status(200).send(paymentLink);
 
     }
     catch(err){
-        console.log(err.message);
+        console.log("error", err.message);
         return res.status(500).send("payment link not found")
     }
 };
