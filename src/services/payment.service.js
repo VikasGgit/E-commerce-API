@@ -1,7 +1,7 @@
 
 import { razorpay } from "../config/razorPayClient.js";
 import { findOrderById } from "./order.service.js";
-
+const callUlr="https://e-commerce-frontend-5upu.onrender.com";
 const createPaymentLink = async (orderId)=>{
     try{
         const order = await  findOrderById(orderId);
@@ -18,7 +18,7 @@ const createPaymentLink = async (orderId)=>{
                 sms:true,
             },
             reminder_enable:true,
-            callback_url : `http://localhost:5173/payment/${orderId}`,
+            callback_url : `${callUlr}/${orderId}`,
             callback_method : 'get'
         };
 
