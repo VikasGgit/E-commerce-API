@@ -18,7 +18,7 @@ const createPaymentLink = async (orderId)=>{
                 sms:true,
             },
             reminder_enable:true,
-            callback_url : `${callUrl}/payment/${orderId}`,
+            callback_url : `${callUrl}/payment`,
             callback_method : 'get'
         };
 
