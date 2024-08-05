@@ -37,14 +37,15 @@ app.use("/api/reviews", reviewRouter);
 import ratingRouter from "./routes/rating.route.js"
 app.use("/api/ratings", ratingRouter);
 
-
+import paymentRouter from "./routes/payment.route.js"
+app.use("/api/payments", paymentRouter);
 
 
 
 app.get('/', (req, res) => {
     res.json({
         "status":400,
-        "msg":"welcom to world!"
+        "msg":"Its working!"
     });
 })
 
