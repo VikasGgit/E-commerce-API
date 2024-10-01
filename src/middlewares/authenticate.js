@@ -10,11 +10,12 @@ const authenticate= async(req, res, next) => {
         const userId=await getUserIdByToken(token);
         const user= await getUserById(userId);
         req.user = user;
+        next();
     }
     catch(err){
         res.status(500).send(err.message);
     }
-    next();
+    
 }
 
 export default authenticate;
