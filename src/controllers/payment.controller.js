@@ -19,7 +19,7 @@ const updatePaymentInf= async (req, res) => {
         return res.status(200).send({message:"Payment info updated",success:true})
     }
     catch(err){
-        return res.status(500).send(err.message)
+        return res.status(500).send(err)
     }
 };
 
