@@ -1,11 +1,7 @@
 
 import { razorpay } from "../config/razorPayClient.js";
 import { findOrderById } from "./order.service.js";
-<<<<<<< HEAD
 const callUrl="http://localhost:5173/payment"
-=======
-const callUrl="https://e-commerce-frontend-5upu.onrender.com/payment"
->>>>>>> 283b50e77676a4a55387ed0249ba9d65f4b06d13
 const createPaymentLink = async (orderId)=>{
    
     try{
