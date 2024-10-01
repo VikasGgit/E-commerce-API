@@ -18,33 +18,6 @@ const createCart= async(user)=>{
    
 }
 
-// const findUserCart = async(user)=>{
-//     try{
-//     const cart=await Cart.find({user});
-//     let cartItems=CartItem.find({cart:cart._id}).populate('products');
-//     cart.cartItems = cartItems;
-//     let totalPrice=0;
-//     let totalDiscountedPrice=0;
-//     let totalItems=0;
-
-    
-
-//     for(let cartItem of cart.cartItems){
-//         totalPrice += cartItem.price;
-//         totalDiscountedPrice += cartItem.discountedPrice;
-//         totalItems += cartItem.quantity;
-// }
-//     let discount = totalPrice-totalDiscountedPrice;
-//     cart.totalPrice=totalPrice;
-//     cart.discount=discount;
-//     cart.totalItem=totalItems;
-
-//     return cart;
-//     }
-//     catch (error) {
-//         throw new Error(`Error in creating finding: ${error.message}`);
-//     }
-// }
 
 const findUserCart = async (user) => {
     try {

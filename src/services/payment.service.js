@@ -1,8 +1,9 @@
 
 import { razorpay } from "../config/razorPayClient.js";
 import { findOrderById } from "./order.service.js";
-const callUrl="www.razorpay.com"
+const callUrl="http://localhost:5173/payment"
 const createPaymentLink = async (orderId)=>{
+   
     try{
         const order = await  findOrderById(orderId);
         const paymentLinkRequest={
@@ -33,10 +34,14 @@ const createPaymentLink = async (orderId)=>{
         return resData;
 
     }
-    catch(err){
-        throw new Error(err.message);
+    
+        catch (err) {
+            console.error("Error in Razorpay Payment Link Creation:", err); 
+            throw new Error(err.message);
+        }
+        
     }
-}
+
 
 const updatePaymentInfo = async (reqData)=>{
     const paymentId= reqData.payment_id;
